@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <script>
+      (function() {
+        try {
+          var _f = typeof window.fetch === 'function' ? window.fetch.bind(window) : window.fetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function() {
+              return _f;
+            },
+            set: function(val) {
+              _f = val;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (_) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#08090d" />
+    <title>ASHIK AHAMMED | Web Developer &amp; MERN Stack Developer</title>
+    <meta name="description" content="Portfolio of ASHIK AHAMMED, a Web Developer and MERN Stack Developer specializing in React, Next.js, Node.js, and MongoDB to build modern, responsive, and performant web applications." />
+    <meta name="keywords" content="Ashik Ahammed, Web Developer, MERN Stack Developer, React, Next.js, Node.js, Express.js, MongoDB, JavaScript, TypeScript, Tailwind CSS, Frontend Developer, Full Stack Developer, Bangladesh" />
+    <meta name="author" content="ASHIK AHAMMED" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ASHIK AHAMMED | Web Developer &amp; MERN Stack Developer" />
+    <meta property="og:description" content="Portfolio of ASHIK AHAMMED, a Web Developer and MERN Stack Developer specializing in React, Next.js, Node.js, and MongoDB to build modern, responsive, and performant web applications." />
+    <meta property="og:image" content="/profile.jpg" />
+    <meta property="og:image:alt" content="ASHIK AHAMMED - Web Developer &amp; MERN Stack Developer" />
+    <!-- Production Deployment URL placeholder (e.g. <meta property="og:url" content="https://yourdomain.com" />) -->
+
+    <!-- Twitter / X Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ASHIK AHAMMED | Web Developer &amp; MERN Stack Developer" />
+    <meta name="twitter:description" content="Portfolio of ASHIK AHAMMED, a Web Developer and MERN Stack Developer specializing in React, Next.js, Node.js, and MongoDB to build modern, responsive, and performant web applications." />
+    <meta name="twitter:image" content="/profile.jpg" />
+    <meta name="twitter:image:alt" content="ASHIK AHAMMED - Web Developer &amp; MERN Stack Developer" />
+
+    <!-- Canonical URL placeholder: Populate with production domain upon final deployment (e.g. <link rel="canonical" href="https://yourdomain.com" />) -->
+
+    <!-- Structured Data (JSON-LD) for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ashik Ahammed",
+      "jobTitle": "Web Developer & MERN Stack Developer",
+      "description": "Web Developer and MERN Stack Developer specializing in React, Next.js, Node.js, and MongoDB.",
+      "image": "/profile.jpg",
+      "sameAs": [
+        "https://github.com/ashikmahmud84",
+        "https://linkedin.com/in/ashik24bd"
+      ],
+      "knowsAbout": [
+        "React",
+        "Next.js",
+        "Node.js",
+        "MongoDB",
+        "Express.js",
+        "TypeScript",
+        "JavaScript",
+        "Tailwind CSS"
+      ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-[#08090d] text-[#f8fafc] font-sans antialiased selection:bg-emerald-500/20 selection:text-emerald-300 min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
