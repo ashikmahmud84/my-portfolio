@@ -43,11 +43,11 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
     <GlassCard
       variant="default"
       hoverGlow
-      className="group p-6 sm:p-7 flex flex-col justify-between h-full border-white/[0.08] hover:border-emerald-500/35 transition-all duration-300 hover:-translate-y-1.5 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)]"
+      className="group p-4 sm:p-6 lg:p-7 flex flex-col justify-between h-full border-white/[0.08] hover:border-emerald-500/35 transition-all duration-300 hover:-translate-y-1.5 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)]"
     >
       <div>
         {/* Top Header Row: Icon & Arrow Indicator */}
-        <div className="flex items-center justify-between mb-5">
+        <div className="flex items-center justify-between mb-4 sm:mb-5">
           <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] group-hover:border-emerald-500/30 group-hover:bg-emerald-500/10 transition-colors">
             {renderIcon()}
           </div>

@@ -18,7 +18,7 @@ import { CursorFollower } from './components/ui/CursorFollower';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#08090d] text-[#f8fafc] font-sans antialiased relative selection:bg-emerald-500/20 selection:text-emerald-300">
+    <div className="min-h-screen bg-[#08090d] text-[#f8fafc] font-sans antialiased relative selection:bg-emerald-500/20 selection:text-emerald-300 w-full overflow-x-hidden">
       {/* Custom Subtle Desktop Cursor Follower */}
       <CursorFollower />
 

@@ -13,7 +13,12 @@ export const GlassCard: React.FC<GlassCardProps> = ({
   className,
   ...props
 }) => {
-  const baseStyles = 'relative rounded-xl border p-6 transition-all duration-200 overflow-hidden';
+  // Check if custom padding was provided in className
+  const hasCustomPadding = className && /\bp-\d|\bpx-\d|\bpy-\d|\bp-\[/.test(className);
+  const baseStyles = cn(
+    'relative rounded-xl border transition-all duration-200 overflow-hidden',
+    !hasCustomPadding && 'p-4 sm:p-6'
+  );
 
   const variantStyles = {
     default: 'bg-[#11131a]/80 backdrop-blur-md border-white/[0.08] shadow-[0_4px_20px_-4px_rgba(0,0,0,0.5)]',

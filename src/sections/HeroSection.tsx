@@ -93,32 +93,32 @@ export const HeroSection: React.FC = () => {
     <section
       id="home"
       aria-label="Introduction"
-      className="relative pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20 overflow-hidden scroll-mt-24"
+      className="relative pt-20 pb-10 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20 overflow-hidden scroll-mt-24"
     >
       {/* Target anchor for backwards-compatibility with #hero links */}
       <div id="hero" className="sr-only" aria-hidden="true" />
 
       {/* Subtle ambient lighting / radial backdrop glow */}
       <div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[450px] bg-emerald-500/[0.05] rounded-full blur-[130px] pointer-events-none"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] max-w-full h-[450px] bg-emerald-500/[0.05] rounded-full blur-[130px] pointer-events-none"
         aria-hidden="true"
       />
       <div
-        className="absolute top-1/3 right-10 w-[300px] h-[300px] bg-teal-500/[0.03] rounded-full blur-[110px] pointer-events-none"
+        className="absolute top-1/3 right-10 w-[300px] max-w-full h-[300px] bg-teal-500/[0.03] rounded-full blur-[110px] pointer-events-none"
         aria-hidden="true"
       />
 
       <Container size="wide" className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
           {/* LEFT SIDE: Personal Branding, Headline, Rotating Title, Bio, and CTAs */}
           <motion.div
             variants={leftColVariants}
             initial="hidden"
             animate="visible"
-            className="lg:col-span-7 flex flex-col items-start"
+            className="lg:col-span-7 flex flex-col items-start w-full min-w-0"
           >
             {/* Availability Badge & Location */}
-            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-2.5 mb-4">
+            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-2 sm:gap-2.5 mb-3.5 sm:mb-4">
               <Badge variant="status" size="sm" pulseDot>
                 {developerProfile.status}
               </Badge>
@@ -129,11 +129,11 @@ export const HeroSection: React.FC = () => {
             </motion.div>
 
             {/* Introduction & Developer Name */}
-            <motion.div variants={itemVariants} className="mb-2">
-              <p className="text-xs sm:text-sm font-mono text-emerald-400 font-medium tracking-wider uppercase mb-1.5">
+            <motion.div variants={itemVariants} className="mb-2 w-full">
+              <p className="text-xs sm:text-sm font-mono text-emerald-400 font-medium tracking-wider uppercase mb-1 sm:mb-1.5">
                 Hi, I&apos;m
               </p>
-              <h1 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-extrabold tracking-tight text-neutral-100 leading-[1.12]">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[3.25rem] font-extrabold tracking-tight text-neutral-100 leading-[1.12] break-words text-balance">
                 {developerProfile.name}
               </h1>
             </motion.div>
@@ -141,19 +141,19 @@ export const HeroSection: React.FC = () => {
             {/* Rotating Title / Specialization */}
             <motion.div
               variants={itemVariants}
-              className="flex items-center flex-wrap gap-2 text-lg sm:text-xl lg:text-2xl font-semibold text-neutral-200 min-h-[36px] sm:min-h-[40px] mb-5"
+              className="flex items-center flex-wrap gap-1.5 sm:gap-2 text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-neutral-200 min-h-[auto] sm:min-h-[40px] mb-4 sm:mb-5 leading-snug"
             >
               <span className="text-neutral-300">
                 {developerProfile.role}
               </span>
               <span className="text-neutral-600 font-mono" aria-hidden="true">|</span>
-              <div className="inline-flex items-center">
+              <div className="inline-flex items-center flex-wrap">
                 <span className="font-mono text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">
                   {displayedTitle}
                 </span>
                 {!shouldReduceMotion && (
                   <span
-                    className="inline-block w-[2.5px] h-5 sm:h-6 bg-emerald-400 ml-1 animate-pulse"
+                    className="inline-block w-[2.5px] h-4 sm:h-5 bg-emerald-400 ml-1 animate-pulse"
                     aria-hidden="true"
                   />
                 )}
@@ -163,7 +163,7 @@ export const HeroSection: React.FC = () => {
             {/* Professional Bio Description */}
             <motion.p
               variants={itemVariants}
-              className="text-base sm:text-lg text-neutral-300 leading-relaxed max-w-2xl mb-7 font-normal"
+              className="text-sm sm:text-base lg:text-lg text-neutral-300 leading-relaxed max-w-2xl mb-6 sm:mb-7 font-normal text-pretty"
             >
               {developerProfile.description}
             </motion.p>
@@ -171,7 +171,7 @@ export const HeroSection: React.FC = () => {
             {/* CTA Buttons: View Projects, Contact, Download Resume */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto mb-7"
+              className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto mb-6 sm:mb-7"
             >
               {/* Primary CTA: View My Projects */}
               <Button
@@ -210,8 +210,8 @@ export const HeroSection: React.FC = () => {
             </motion.div>
 
             {/* Social Links */}
-            <motion.div variants={itemVariants} className="flex items-center gap-2.5 pt-1">
-              <span className="text-xs font-mono text-neutral-400 tracking-wide mr-1">
+            <motion.div variants={itemVariants} className="flex items-center gap-2 sm:gap-2.5 pt-1 flex-wrap">
+              <span className="text-xs font-mono text-neutral-400 tracking-wide mr-1 shrink-0">
                 Connect:
               </span>
               <SocialIconButton

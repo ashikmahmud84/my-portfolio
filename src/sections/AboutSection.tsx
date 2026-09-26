@@ -33,10 +33,10 @@ export const AboutSection: React.FC = () => {
   const devInfo = aboutContent.developerInfo;
 
   return (
-    <section id="about" className="py-20 sm:py-24 border-t border-white/[0.06] relative scroll-mt-20 sm:scroll-mt-24">
+    <section id="about" className="py-14 sm:py-20 lg:py-24 border-t border-white/[0.06] relative scroll-mt-20 sm:scroll-mt-24 overflow-hidden">
       {/* Background ambient lighting */}
       <div
-        className="absolute top-1/2 left-0 w-[450px] h-[450px] bg-emerald-500/[0.03] rounded-full blur-[140px] pointer-events-none"
+        className="absolute top-1/2 left-0 w-[450px] max-w-full h-[450px] bg-emerald-500/[0.03] rounded-full blur-[140px] pointer-events-none"
         aria-hidden="true"
       />
 
@@ -50,7 +50,7 @@ export const AboutSection: React.FC = () => {
         />
 
         {/* 2. TOP ROW: About Narrative & Developer Information Card */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 mb-8 sm:mb-12 items-start">
           {/* Left Column (7 cols): Main About Narrative */}
           <motion.div
             variants={fadeInVariants}
@@ -59,9 +59,9 @@ export const AboutSection: React.FC = () => {
             viewport={{ once: true, margin: '-40px' }}
             className="lg:col-span-7 flex flex-col gap-6"
           >
-            <GlassCard variant="default" className="p-6 sm:p-8">
+            <GlassCard variant="default" className="p-4 sm:p-6 lg:p-8">
               <div className="flex items-center gap-2.5 mb-5">
-                <span className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+                <span className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 shrink-0">
                   <User className="w-4 h-4" />
                 </span>
                 <div>
@@ -74,7 +74,7 @@ export const AboutSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="space-y-4 text-sm sm:text-base text-neutral-300 leading-relaxed font-normal">
+              <div className="space-y-4 text-sm sm:text-base text-neutral-300 leading-relaxed font-normal text-pretty">
                 {aboutContent.paragraphs.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
@@ -85,7 +85,7 @@ export const AboutSection: React.FC = () => {
                 <p className="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-3">
                   Core Development Direction
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {aboutContent.focusTechnologies.map((tech) => (
                     <Badge
                       key={tech}
@@ -100,9 +100,9 @@ export const AboutSection: React.FC = () => {
               </div>
 
               {/* Status Note */}
-              <div className="mt-6 pt-5 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-neutral-400">
+              <div className="mt-6 pt-5 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-2.5 text-xs font-mono text-neutral-400">
                 <div className="flex items-center gap-2 text-emerald-400">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
+                  <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
                   <span>MERN Stack &amp; REST APIs</span>
                 </div>
                 <span className="text-neutral-500">Student &amp; Web Developer</span>
@@ -118,10 +118,10 @@ export const AboutSection: React.FC = () => {
             viewport={{ once: true, margin: '-40px' }}
             className="lg:col-span-5"
           >
-            <GlassCard variant="default" className="p-6 sm:p-7">
-              <div className="flex items-center justify-between pb-4 border-b border-white/[0.08] mb-5">
+            <GlassCard variant="default" className="p-4 sm:p-6 lg:p-7">
+              <div className="flex items-center justify-between pb-4 border-b border-white/[0.08] mb-4 sm:mb-5">
                 <div className="flex items-center gap-2">
-                  <span className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
+                  <span className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 shrink-0">
                     <Code2 className="w-4 h-4" />
                   </span>
                   <h3 className="text-sm sm:text-base font-semibold text-neutral-100">
@@ -134,63 +134,63 @@ export const AboutSection: React.FC = () => {
               </div>
 
               {/* Verified Information Items */}
-              <div className="space-y-3.5 text-xs sm:text-sm">
-                <div className="flex items-start justify-between py-2 border-b border-white/[0.05]">
-                  <span className="text-neutral-400 font-mono flex items-center gap-2">
+              <div className="space-y-3 text-xs sm:text-sm">
+                <div className="flex flex-col xs:flex-row xs:items-center justify-between py-2 border-b border-white/[0.05] gap-1 xs:gap-2">
+                  <span className="text-neutral-400 font-mono flex items-center gap-2 shrink-0">
                     <User className="w-3.5 h-3.5 text-neutral-500" />
                     Name
                   </span>
-                  <span className="font-semibold text-neutral-100 text-right">
+                  <span className="font-semibold text-neutral-100 text-left xs:text-right">
                     {devInfo.name}
                   </span>
                 </div>
 
-                <div className="flex items-start justify-between py-2 border-b border-white/[0.05]">
-                  <span className="text-neutral-400 font-mono flex items-center gap-2">
+                <div className="flex flex-col xs:flex-row xs:items-center justify-between py-2 border-b border-white/[0.05] gap-1 xs:gap-2">
+                  <span className="text-neutral-400 font-mono flex items-center gap-2 shrink-0">
                     <Code2 className="w-3.5 h-3.5 text-neutral-500" />
                     Role
                   </span>
-                  <span className="font-mono font-medium text-emerald-400 text-right">
+                  <span className="font-mono font-medium text-emerald-400 text-left xs:text-right">
                     {devInfo.role}
                   </span>
                 </div>
 
-                <div className="flex items-start justify-between py-2 border-b border-white/[0.05]">
-                  <span className="text-neutral-400 font-mono flex items-center gap-2">
+                <div className="flex flex-col xs:flex-row xs:items-center justify-between py-2 border-b border-white/[0.05] gap-1 xs:gap-2">
+                  <span className="text-neutral-400 font-mono flex items-center gap-2 shrink-0">
                     <MapPin className="w-3.5 h-3.5 text-neutral-500" />
                     Location
                   </span>
-                  <span className="text-neutral-300 text-right">
+                  <span className="text-neutral-300 text-left xs:text-right">
                     {devInfo.location}
                   </span>
                 </div>
 
-                <div className="flex items-start justify-between py-2 border-b border-white/[0.05]">
-                  <span className="text-neutral-400 font-mono flex items-center gap-2">
-                    <GraduationCap className="w-3.5 h-3.5 text-neutral-500 shrink-0 mt-0.5" />
+                <div className="flex flex-col xs:flex-row xs:items-start justify-between py-2 border-b border-white/[0.05] gap-1 xs:gap-2">
+                  <span className="text-neutral-400 font-mono flex items-center gap-2 shrink-0">
+                    <GraduationCap className="w-3.5 h-3.5 text-neutral-500 mt-0.5" />
                     Education
                   </span>
-                  <span className="text-neutral-200 text-right font-medium max-w-[62%]">
+                  <span className="text-neutral-200 text-left xs:text-right font-medium max-w-full xs:max-w-[62%]">
                     {devInfo.education}
                   </span>
                 </div>
 
-                <div className="flex items-start justify-between py-2 border-b border-white/[0.05]">
-                  <span className="text-neutral-400 font-mono flex items-center gap-2">
+                <div className="flex flex-col xs:flex-row xs:items-center justify-between py-2 border-b border-white/[0.05] gap-1 xs:gap-2">
+                  <span className="text-neutral-400 font-mono flex items-center gap-2 shrink-0">
                     <Sparkles className="w-3.5 h-3.5 text-neutral-500" />
                     Current Status
                   </span>
-                  <span className="text-emerald-300 font-mono text-right">
+                  <span className="text-emerald-300 font-mono text-left xs:text-right">
                     {devInfo.currentStatus}
                   </span>
                 </div>
 
-                <div className="flex items-start justify-between pt-1">
-                  <span className="text-neutral-400 font-mono flex items-center gap-2">
+                <div className="flex flex-col xs:flex-row xs:items-center justify-between pt-1 gap-1 xs:gap-2">
+                  <span className="text-neutral-400 font-mono flex items-center gap-2 shrink-0">
                     <Languages className="w-3.5 h-3.5 text-neutral-500" />
                     Languages
                   </span>
-                  <span className="text-neutral-300 text-right">
+                  <span className="text-neutral-300 text-left xs:text-right">
                     {devInfo.languages}
                   </span>
                 </div>
@@ -200,7 +200,7 @@ export const AboutSection: React.FC = () => {
         </div>
 
         {/* 3. BOTTOM ROW: Education & Developer Journey Timeline */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           {/* Left Column (5 cols): Formal Education */}
           <motion.div
             variants={fadeInVariants}
@@ -209,9 +209,9 @@ export const AboutSection: React.FC = () => {
             viewport={{ once: true, margin: '-40px' }}
             className="lg:col-span-5 flex flex-col gap-6"
           >
-            <GlassCard variant="default" className="p-6 sm:p-7">
-              <div className="flex items-center gap-2.5 mb-6 pb-3 border-b border-white/[0.08]">
-                <span className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+            <GlassCard variant="default" className="p-4 sm:p-6 lg:p-7">
+              <div className="flex items-center gap-2.5 mb-5 pb-3 border-b border-white/[0.08]">
+                <span className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 shrink-0">
                   <GraduationCap className="w-4 h-4" />
                 </span>
                 <div>
@@ -230,8 +230,8 @@ export const AboutSection: React.FC = () => {
                   <div className="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-[#08090d] border-2 border-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
                   <div className="flex flex-wrap items-center justify-between gap-1">
                     <h4 className="text-sm sm:text-base font-semibold text-neutral-100 flex items-center gap-1.5">
-                      <BookOpen className="w-3.5 h-3.5 text-emerald-400" />
-                      Diploma in Engineering
+                      <BookOpen className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <span>Diploma in Engineering</span>
                     </h4>
                     <span className="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                       7th Semester
@@ -243,12 +243,12 @@ export const AboutSection: React.FC = () => {
                   <p className="text-xs text-neutral-300">
                     Institute: Mymensingh Polytechnic Institute
                   </p>
-                  <div className="flex flex-wrap items-center gap-2 pt-1 text-xs font-mono text-neutral-400">
+                  <div className="flex flex-wrap items-center gap-1.5 pt-1 text-xs font-mono text-neutral-400">
                     <span className="px-2 py-0.5 rounded bg-white/[0.04] border border-white/[0.08]">
                       Current: 7th Semester
                     </span>
                     <span className="px-2 py-0.5 rounded bg-white/[0.04] border border-white/[0.08] text-neutral-300">
-                      Expected Graduation: 2027
+                      Graduation: 2027
                     </span>
                   </div>
                 </div>
@@ -258,11 +258,11 @@ export const AboutSection: React.FC = () => {
                   <div className="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-[#08090d] border-2 border-neutral-500" />
                   <div className="flex flex-wrap items-center justify-between gap-1">
                     <h4 className="text-sm sm:text-base font-semibold text-neutral-200 flex items-center gap-1.5">
-                      <Award className="w-3.5 h-3.5 text-emerald-400" />
-                      SSC (Secondary School Certificate)
+                      <Award className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <span>SSC (Secondary Certificate)</span>
                     </h4>
                     <span className="text-xs font-mono px-2 py-0.5 rounded bg-white/[0.05] text-neutral-300 border border-white/10">
-                      Passing Year: 2022
+                      Passing: 2022
                     </span>
                   </div>
                   <p className="text-xs sm:text-sm text-neutral-300">
@@ -286,9 +286,9 @@ export const AboutSection: React.FC = () => {
             viewport={{ once: true, margin: '-40px' }}
             className="lg:col-span-7 flex flex-col gap-6"
           >
-            <GlassCard variant="default" className="p-6 sm:p-7">
-              <div className="flex items-center gap-2.5 mb-6 pb-3 border-b border-white/[0.08]">
-                <span className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
+            <GlassCard variant="default" className="p-4 sm:p-6 lg:p-7">
+              <div className="flex items-center gap-2.5 mb-5 pb-3 border-b border-white/[0.08]">
+                <span className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 shrink-0">
                   <Layers className="w-4 h-4" />
                 </span>
                 <div>

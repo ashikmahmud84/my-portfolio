@@ -12,8 +12,8 @@ export interface Project {
   liveUrl?: string; // Live deployment URL (button hidden if empty or undefined)
   featured?: boolean; // Highlighted project banner
   mockUrl?: string;
-  accent?: "emerald" | "cyan" | "teal" | "amber" | "purple";
-  type?: "library" | "travel" | "plant" | "3d" | "tea" | "book";
+  accent?: "emerald" | "cyan" | "teal" | "amber" | "purple" | "green" | string;
+  type?: "library" | "travel" | "plant" | "3d" | "tea" | "book" | "environment" | "game" | string;
 }
 
 export const projectsData: Project[] = [

@@ -23,12 +23,12 @@ export const Button: React.FC<ButtonProps> = ({
   isExternal = false,
   ...props
 }) => {
-  const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed select-none whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50 rounded-lg';
+  const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed select-none whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50 rounded-lg max-w-full';
 
   const sizeStyles = {
-    sm: 'text-xs py-2 px-4 gap-1.5',
-    md: 'text-sm py-2.5 px-5 gap-2',
-    lg: 'text-base py-3 px-6 gap-2.5',
+    sm: 'text-xs py-2 px-3 sm:px-4 min-h-[38px] gap-1.5',
+    md: 'text-xs sm:text-sm py-2.5 px-3.5 sm:px-5 min-h-[42px] gap-2',
+    lg: 'text-sm sm:text-base py-3 px-4 sm:px-6 min-h-[46px] gap-2.5',
   };
 
   const variantStyles = {
@@ -50,7 +50,7 @@ export const Button: React.FC<ButtonProps> = ({
         rel={isExternal ? 'noopener noreferrer' : undefined}
       >
         {leftIcon && <span className="inline-flex shrink-0">{leftIcon}</span>}
-        <span>{children}</span>
+        <span className="truncate">{children}</span>
         {rightIcon && <span className="inline-flex shrink-0">{rightIcon}</span>}
       </a>
     );
@@ -59,7 +59,7 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button className={classes} {...props}>
       {leftIcon && <span className="inline-flex shrink-0">{leftIcon}</span>}
-      <span>{children}</span>
+      <span className="truncate">{children}</span>
       {rightIcon && <span className="inline-flex shrink-0">{rightIcon}</span>}
     </button>
   );

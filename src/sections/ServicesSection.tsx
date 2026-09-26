@@ -31,14 +31,14 @@ export const ServicesSection: React.FC = () => {
   };
 
   return (
-    <section id="services" className="py-20 sm:py-24 border-t border-white/[0.06] relative scroll-mt-20 sm:scroll-mt-24">
+    <section id="services" className="py-14 sm:py-20 lg:py-24 border-t border-white/[0.06] relative scroll-mt-20 sm:scroll-mt-24 overflow-hidden">
       {/* Ambient background lighting */}
       <div
-        className="absolute top-1/3 left-1/3 w-[450px] h-[450px] bg-emerald-500/[0.03] rounded-full blur-[140px] pointer-events-none"
+        className="absolute top-1/3 left-1/3 w-[450px] max-w-full h-[450px] bg-emerald-500/[0.03] rounded-full blur-[140px] pointer-events-none"
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cyan-500/[0.02] rounded-full blur-[140px] pointer-events-none"
+        className="absolute bottom-1/4 right-1/4 w-[400px] max-w-full h-[400px] bg-cyan-500/[0.02] rounded-full blur-[140px] pointer-events-none"
         aria-hidden="true"
       />
 
@@ -58,7 +58,7 @@ export const ServicesSection: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8"
         >
           {servicesData.map((service) => (
             <motion.div key={service.id} variants={cardVariants} className="h-full">

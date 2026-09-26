@@ -39,18 +39,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/70 border border-emerald-500/30" />
         </div>
 
-        <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-0.5 rounded-md bg-black/40 border border-white/[0.06] text-[10px] font-mono text-neutral-400 max-w-[130px] sm:max-w-[220px] truncate">
+        <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-0.5 rounded-md bg-black/40 border border-white/[0.06] text-[10px] font-mono text-neutral-400 max-w-[100px] xs:max-w-[140px] sm:max-w-[220px] truncate">
           <Lock className="w-2.5 h-2.5 text-neutral-500 shrink-0" />
           <span className="truncate">{project.mockUrl || `${project.id}.dev`}</span>
         </div>
 
         {project.featured ? (
-          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-mono text-emerald-400 font-medium">
+          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-mono text-emerald-400 font-medium shrink-0">
             <Sparkles className="w-2.5 h-2.5 text-emerald-400" />
             Featured
           </span>
         ) : (
-          <div className="w-12" />
+          <div className="w-8 sm:w-12" />
         )}
       </div>
 
@@ -80,7 +80,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       </div>
 
       {/* Project Details Content Area */}
-      <div className="p-6 sm:p-7 flex flex-col flex-1 justify-between">
+      <div className="p-4 sm:p-6 lg:p-7 flex flex-col flex-1 justify-between">
         <div>
           {/* Category Badge & Architecture Label */}
           <div className="flex items-center justify-between gap-2 mb-3">
@@ -92,26 +92,26 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               {project.category}
             </Badge>
 
-            <span className="text-[11px] font-mono text-neutral-500 flex items-center gap-1">
+            <span className="text-[11px] font-mono text-neutral-500 flex items-center gap-1 shrink-0">
               <Code2 className="w-3 h-3 text-neutral-500" />
               Verified Project
             </span>
           </div>
 
           {/* Project Title */}
-          <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-100 group-hover:text-emerald-400 transition-colors mb-2.5">
+          <h3 className="text-lg sm:text-xl font-bold tracking-tight text-neutral-100 group-hover:text-emerald-400 transition-colors mb-2 break-words">
             {project.title}
           </h3>
 
           {/* Short Description */}
-          <p className="text-sm text-neutral-300 leading-relaxed font-normal mb-5">
+          <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal mb-4 sm:mb-5 text-pretty">
             {project.shortDescription || project.description}
           </p>
 
           {/* Feature Highlights */}
           {project.features && project.features.length > 0 && (
-            <div className="mb-6 space-y-2">
-              <p className="text-[11px] font-mono uppercase tracking-wider text-neutral-400 font-semibold">
+            <div className="mb-5 space-y-2">
+              <p className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-neutral-400 font-semibold">
                 Key Highlights:
               </p>
               <ul className="space-y-1.5" aria-label="Feature highlights">
@@ -129,7 +129,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         {/* Technologies and Action Buttons */}
         <div>
           {/* Technology Badges */}
-          <div className="pt-4 pb-5 border-t border-white/[0.08] flex flex-wrap gap-1.5" aria-label="Technologies used">
+          <div className="pt-3.5 pb-4 border-t border-white/[0.08] flex flex-wrap gap-1.5" aria-label="Technologies used">
             {project.technologies.map((tech) => (
               <span
                 key={tech}
@@ -142,17 +142,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
           {/* Conditional Action Buttons: Render ONLY when URLs are available */}
           {(hasGithub || hasLive) && (
-            <div className={`grid gap-3 pt-2 ${hasGithub && hasLive ? 'grid-cols-2' : 'grid-cols-1'}`}>
+            <div className={`grid gap-2 sm:gap-3 pt-2 ${hasGithub && hasLive ? 'grid-cols-2' : 'grid-cols-1'}`}>
               {hasGithub && (
                 <a
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.09] border border-white/10 hover:border-emerald-500/40 text-xs font-medium text-neutral-200 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#08090d]"
+                  className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 min-h-[40px] rounded-lg bg-white/[0.04] hover:bg-white/[0.09] border border-white/10 hover:border-emerald-500/40 text-xs font-medium text-neutral-200 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#08090d] min-w-0"
                   aria-label={`View ${project.title} GitHub repository in a new tab`}
                 >
-                  <Github className="w-4 h-4 text-neutral-300" aria-hidden="true" />
-                  <span>GitHub</span>
+                  <Github className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-300 shrink-0" aria-hidden="true" />
+                  <span className="truncate">GitHub</span>
                 </a>
               )}
 
@@ -161,11 +161,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 hover:border-emerald-400 text-xs font-medium text-emerald-300 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#08090d]"
+                  className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 min-h-[40px] rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 hover:border-emerald-400 text-xs font-medium text-emerald-300 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#08090d] min-w-0"
                   aria-label={`Open ${project.title} live demo in a new tab`}
                 >
-                  <ExternalLink className="w-4 h-4 text-emerald-400" aria-hidden="true" />
-                  <span>Live Demo</span>
+                  <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400 shrink-0" aria-hidden="true" />
+                  <span className="truncate">Live Demo</span>
                 </a>
               )}
             </div>

@@ -61,14 +61,14 @@ export const ExperienceSection: React.FC = () => {
   };
 
   return (
-    <section id="experience" className="py-20 sm:py-24 border-t border-white/[0.06] relative scroll-mt-20 sm:scroll-mt-24">
+    <section id="experience" className="py-14 sm:py-20 lg:py-24 border-t border-white/[0.06] relative scroll-mt-20 sm:scroll-mt-24 overflow-hidden">
       {/* Ambient background lighting */}
       <div
-        className="absolute top-1/3 left-1/4 w-[450px] h-[450px] bg-emerald-500/[0.03] rounded-full blur-[140px] pointer-events-none"
+        className="absolute top-1/3 left-1/4 w-[450px] max-w-full h-[450px] bg-emerald-500/[0.03] rounded-full blur-[140px] pointer-events-none"
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-cyan-500/[0.02] rounded-full blur-[140px] pointer-events-none"
+        className="absolute bottom-1/3 right-1/4 w-[400px] max-w-full h-[400px] bg-cyan-500/[0.02] rounded-full blur-[140px] pointer-events-none"
         aria-hidden="true"
       />
 
@@ -83,7 +83,7 @@ export const ExperienceSection: React.FC = () => {
         />
 
         {/* Timeline Container */}
-        <div className="relative mt-12 sm:mt-16 max-w-5xl mx-auto">
+        <div className="relative mt-8 sm:mt-14 max-w-5xl mx-auto">
           {/* Vertical Connecting Line - Desktop Center Spine */}
           <div
             className="hidden lg:block absolute left-1/2 -translate-x-1/2 top-4 bottom-24 w-[2px] bg-gradient-to-b from-emerald-500/40 via-cyan-500/30 to-emerald-500/10 pointer-events-none"
@@ -92,7 +92,7 @@ export const ExperienceSection: React.FC = () => {
 
           {/* Vertical Connecting Line - Mobile/Tablet Left Spine */}
           <div
-            className="lg:hidden absolute left-5 top-4 bottom-24 w-[2px] bg-gradient-to-b from-emerald-500/40 via-cyan-500/30 to-emerald-500/10 pointer-events-none"
+            className="lg:hidden absolute left-4 sm:left-6 top-4 bottom-24 w-[2px] bg-gradient-to-b from-emerald-500/40 via-cyan-500/30 to-emerald-500/10 pointer-events-none"
             aria-hidden="true"
           />
 
@@ -102,7 +102,7 @@ export const ExperienceSection: React.FC = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-50px' }}
-            className="space-y-10 sm:space-y-12"
+            className="space-y-8 sm:space-y-12"
           >
             {careerMilestones.map((milestone, idx) => {
               const isEven = idx % 2 === 0;
@@ -123,7 +123,7 @@ export const ExperienceSection: React.FC = () => {
 
                   {/* Mobile/Tablet Left Node */}
                   <div
-                    className="lg:hidden absolute left-5 -translate-x-1/2 top-6 w-9 h-9 rounded-full bg-[#0a0d14] border-2 border-emerald-500/50 flex items-center justify-center shadow-[0_0_12px_rgba(16,185,129,0.2)] z-20"
+                    className="lg:hidden absolute left-4 sm:left-6 -translate-x-1/2 top-6 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#0a0d14] border-2 border-emerald-500/50 flex items-center justify-center shadow-[0_0_12px_rgba(16,185,129,0.2)] z-20"
                     aria-hidden="true"
                   >
                     {getMilestoneIcon(milestone.icon)}
@@ -131,7 +131,7 @@ export const ExperienceSection: React.FC = () => {
 
                   {/* Card wrapper with responsive positioning */}
                   <div
-                    className={`w-full pl-12 sm:pl-14 lg:pl-0 ${
+                    className={`w-full pl-9 sm:pl-14 lg:pl-0 ${
                       isEven
                         ? 'lg:col-start-1 lg:col-end-2 lg:pr-2'
                         : 'lg:col-start-2 lg:col-end-3 lg:col-span-1 lg:pl-2'
@@ -140,7 +140,7 @@ export const ExperienceSection: React.FC = () => {
                     <GlassCard
                       variant="default"
                       hoverGlow
-                      className="p-6 sm:p-7 border-white/[0.08] hover:border-emerald-500/35 transition-all duration-300 hover:-translate-y-1 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.5)]"
+                      className="p-4 sm:p-6 lg:p-7 border-white/[0.08] hover:border-emerald-500/35 transition-all duration-300 hover:-translate-y-1 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.5)]"
                     >
                       {/* Top Meta Bar */}
                       <div className="flex items-center justify-between gap-3 mb-3 flex-wrap">

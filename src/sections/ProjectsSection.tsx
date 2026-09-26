@@ -47,14 +47,14 @@ export const ProjectsSection: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="py-20 sm:py-24 border-t border-white/[0.06] relative scroll-mt-20 sm:scroll-mt-24">
+    <section id="projects" className="py-14 sm:py-20 lg:py-24 border-t border-white/[0.06] relative scroll-mt-20 sm:scroll-mt-24 overflow-hidden">
       {/* Ambient background lighting */}
       <div
-        className="absolute top-1/4 left-1/3 w-[450px] h-[450px] bg-emerald-500/[0.03] rounded-full blur-[140px] pointer-events-none"
+        className="absolute top-1/4 left-1/3 w-[450px] max-w-full h-[450px] bg-emerald-500/[0.03] rounded-full blur-[140px] pointer-events-none"
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cyan-500/[0.02] rounded-full blur-[140px] pointer-events-none"
+        className="absolute bottom-1/4 right-1/4 w-[400px] max-w-full h-[400px] bg-cyan-500/[0.02] rounded-full blur-[140px] pointer-events-none"
         aria-hidden="true"
       />
 
@@ -68,7 +68,7 @@ export const ProjectsSection: React.FC = () => {
         />
 
         {/* Category Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10 sm:mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-8 sm:mb-12">
           {categories.map((category) => {
             const count =
               category === 'All'
@@ -81,7 +81,7 @@ export const ProjectsSection: React.FC = () => {
                 key={category}
                 type="button"
                 onClick={() => setActiveCategory(category)}
-                className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-mono transition-all duration-200 cursor-pointer ${
+                className={`inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs font-mono transition-all duration-200 cursor-pointer ${
                   isActive
                     ? 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/40 shadow-[0_0_15px_rgba(16,185,129,0.12)]'
                     : 'bg-white/[0.03] text-neutral-400 hover:text-neutral-200 border border-white/[0.06] hover:border-white/15'
@@ -102,14 +102,14 @@ export const ProjectsSection: React.FC = () => {
           })}
         </div>
 
-        {/* Responsive Projects Grid: 1 column on mobile, 2 columns on tablet and desktop */}
+        {/* Responsive Projects Grid: 1 col on mobile, 2 cols on tablet, 3 cols on desktop */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeCategory}
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10"
+            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8"
           >
             {filteredProjects.map((project) => (
               <motion.div key={project.id} variants={cardVariants} className="h-full">

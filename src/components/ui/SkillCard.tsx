@@ -18,9 +18,8 @@ export const SkillCard: React.FC<SkillCardProps> = ({
 
   return (
     <div
-      className={`group relative flex flex-col items-center text-center p-3.5 sm:p-4.5 rounded-xl bg-[#0d1018]/90 border border-white/[0.08] hover:border-emerald-500/40 hover:bg-[#121622] transition-all duration-300 ease-out cursor-default select-none hover:-translate-y-1 hover:scale-[1.02] shadow-sm hover:shadow-lg ${className}`}
+      className={`group relative flex flex-col items-center text-center p-2.5 sm:p-4 rounded-xl bg-[#0d1018]/90 border border-white/[0.08] hover:border-emerald-500/40 hover:bg-[#121622] transition-all duration-300 ease-out cursor-default select-none hover:-translate-y-1 hover:scale-[1.02] shadow-sm hover:shadow-lg w-full ${className}`}
       style={{
-        // Dynamic brand glow on hover via CSS variable
         boxShadow: undefined
       }}
     >
@@ -34,10 +33,10 @@ export const SkillCard: React.FC<SkillCardProps> = ({
       />
 
       {/* Top right indicator badges */}
-      <div className="absolute top-2.5 right-2.5 flex items-center gap-1">
+      <div className="absolute top-2 right-2 flex items-center gap-1">
         {skill.isCore && (
           <span
-            className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]"
+            className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]"
             title="Core MERN Stack"
           />
         )}
@@ -45,35 +44,35 @@ export const SkillCard: React.FC<SkillCardProps> = ({
 
       {/* Logo container */}
       <div
-        className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center mb-2.5 sm:mb-3 bg-[#151926]/90 border border-white/[0.08] group-hover:border-white/20 transition-all duration-300 group-hover:scale-105 shadow-inner"
+        className="w-10 h-10 sm:w-13 sm:h-13 rounded-xl flex items-center justify-center mb-2 sm:mb-2.5 bg-[#151926]/90 border border-white/[0.08] group-hover:border-white/20 transition-all duration-300 group-hover:scale-105 shadow-inner"
         style={{
           boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.05)'
         }}
       >
         <TechIcon
           name={skill.name}
-          size={30}
+          size={26}
           className="transition-transform duration-300 group-hover:scale-110 drop-shadow-sm"
         />
       </div>
 
       {/* Technology Name */}
-      <h4 className="text-xs sm:text-sm font-semibold text-neutral-200 group-hover:text-white transition-colors duration-200 tracking-tight">
+      <h4 className="text-xs sm:text-sm font-semibold text-neutral-200 group-hover:text-white transition-colors duration-200 tracking-tight truncate max-w-full px-1">
         {skill.name}
       </h4>
 
       {/* Subtle Role / Capability description */}
       {showRole && skill.role && (
-        <p className="mt-1 text-[11px] font-mono text-neutral-400 group-hover:text-neutral-300 line-clamp-1 transition-colors leading-tight">
+        <p className="mt-0.5 sm:mt-1 text-[10px] sm:text-[11px] font-mono text-neutral-400 group-hover:text-neutral-300 truncate max-w-full px-1 transition-colors leading-tight">
           {skill.role}
         </p>
       )}
 
       {/* Badge (e.g. Currently Exploring) */}
       {skill.badge && (
-        <div className="mt-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-sans font-medium bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
-          <Sparkles className="w-2.5 h-2.5 text-emerald-400" />
-          <span>{skill.badge}</span>
+        <div className="mt-1.5 sm:mt-2 inline-flex items-center gap-1 px-1.5 sm:px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-sans font-medium bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 truncate max-w-full">
+          <Sparkles className="w-2 sm:w-2.5 h-2 sm:h-2.5 text-emerald-400 shrink-0" />
+          <span className="truncate">{skill.badge}</span>
         </div>
       )}
     </div>

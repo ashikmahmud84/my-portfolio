@@ -21,21 +21,21 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="border-t border-white/[0.08] bg-[#07080b] py-14 text-sm text-neutral-400 relative">
+    <footer className="border-t border-white/[0.08] bg-[#07080b] py-10 sm:py-14 text-sm text-neutral-400 relative overflow-hidden">
       <Container size="wide">
         {/* Main Footer Multi-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-white/[0.06]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 pb-8 sm:pb-12 border-b border-white/[0.06]">
           {/* Brand Column (Left) */}
-          <div className="md:col-span-6 lg:col-span-5 flex flex-col items-start gap-3">
+          <div className="md:col-span-6 lg:col-span-5 flex flex-col items-start gap-2.5 sm:gap-3">
             <a
               href="#"
               className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg"
               aria-label={`${developerProfile.name} - Back to top`}
             >
-              <div className="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center font-mono text-xs font-bold text-emerald-400 group-hover:border-emerald-500/60 transition-colors">
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center font-mono text-xs font-bold text-emerald-400 group-hover:border-emerald-500/60 transition-colors shrink-0">
                 AA
               </div>
-              <span className="font-bold text-base tracking-tight text-neutral-100 group-hover:text-emerald-400 transition-colors">
+              <span className="font-bold text-sm sm:text-base tracking-tight text-neutral-100 group-hover:text-emerald-400 transition-colors">
                 {developerProfile.name}
               </span>
             </a>
@@ -45,11 +45,11 @@ export const Footer: React.FC = () => {
               {developerProfile.role} / {developerProfile.subRole || 'MERN Stack Developer'}
             </p>
 
-            <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-md">
+            <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-md text-pretty">
               Building modern, responsive, and scalable web applications with clean code, modern frontend design, and full-stack technologies.
             </p>
 
-            <div className="inline-flex items-center gap-2 text-xs text-neutral-400 font-mono mt-1">
+            <div className="inline-flex items-center gap-2 text-xs text-neutral-400 font-mono mt-1 flex-wrap">
               <span>{developerProfile.location}</span>
               <span>•</span>
               <span className="text-emerald-400/90">Available for Opportunities</span>

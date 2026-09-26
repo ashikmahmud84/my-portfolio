@@ -175,14 +175,14 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-24 border-t border-white/[0.06] relative scroll-mt-20 sm:scroll-mt-24">
+    <section id="contact" className="py-14 sm:py-20 lg:py-24 border-t border-white/[0.06] relative scroll-mt-20 sm:scroll-mt-24 overflow-hidden">
       {/* Ambient background lighting */}
       <div
-        className="absolute top-1/4 right-1/4 w-[450px] h-[450px] bg-emerald-500/[0.03] rounded-full blur-[140px] pointer-events-none"
+        className="absolute top-1/4 right-1/4 w-[450px] max-w-full h-[450px] bg-emerald-500/[0.03] rounded-full blur-[140px] pointer-events-none"
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-cyan-500/[0.02] rounded-full blur-[140px] pointer-events-none"
+        className="absolute bottom-1/4 left-1/4 w-[400px] max-w-full h-[400px] bg-cyan-500/[0.02] rounded-full blur-[140px] pointer-events-none"
         aria-hidden="true"
       />
 
@@ -201,17 +201,17 @@ export const ContactSection: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mt-12 sm:mt-16 items-start"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 mt-8 sm:mt-14 items-start"
         >
           {/* Left Column: Direct Contact Details & Verified Socials */}
           <motion.div variants={itemVariants} className="lg:col-span-5 space-y-6">
             <GlassCard
               variant="default"
               hoverGlow
-              className="p-6 sm:p-8 border-white/[0.08] hover:border-emerald-500/35 transition-all duration-300"
+              className="p-4 sm:p-6 lg:p-8 border-white/[0.08] hover:border-emerald-500/35 transition-all duration-300"
             >
               {/* Availability Badge & Heading */}
-              <div className="flex items-center gap-2 mb-3">
+              <div className="flex items-center gap-2 mb-3 flex-wrap">
                 <Badge variant="status" size="sm" pulseDot>
                   Available
                 </Badge>
@@ -379,11 +379,11 @@ export const ContactSection: React.FC = () => {
             <GlassCard
               variant="default"
               hoverGlow
-              className="p-6 sm:p-8 border-white/[0.08] hover:border-emerald-500/35 transition-all duration-300"
+              className="p-4 sm:p-6 lg:p-8 border-white/[0.08] hover:border-emerald-500/35 transition-all duration-300"
             >
-              <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/[0.06]">
+              <div className="flex items-center justify-between mb-5 pb-4 border-b border-white/[0.06]">
                 <div className="flex items-center gap-2">
-                  <span className="p-2 rounded-lg bg-emerald-500/10 text-emerald-400">
+                  <span className="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0">
                     <Sparkles className="w-4 h-4" aria-hidden="true" />
                   </span>
                   <div>
@@ -391,7 +391,7 @@ export const ContactSection: React.FC = () => {
                       Send a Message
                     </h3>
                     <p className="text-xs text-neutral-400">
-                      Submit details below or send directly via your email client.
+                      Submit details below or reach out directly.
                     </p>
                   </div>
                 </div>
@@ -580,7 +580,7 @@ export const ContactSection: React.FC = () => {
                 <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-semibold text-xs transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_rgba(16,185,129,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#08090d] active:scale-[0.98] cursor-pointer"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-2.5 min-h-[44px] rounded-lg bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-semibold text-xs transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_rgba(16,185,129,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#08090d] active:scale-[0.98] cursor-pointer"
                   >
                     <Send className="w-3.5 h-3.5" aria-hidden="true" />
                     <span>Send Message</span>
@@ -589,7 +589,7 @@ export const ContactSection: React.FC = () => {
                   {developerProfile.socials?.email && (
                     <a
                       href={`mailto:${developerProfile.socials.email}`}
-                      className="text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors text-center sm:text-right"
+                      className="text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors text-center sm:text-right break-all sm:break-normal"
                     >
                       Or write directly to {developerProfile.socials.email} &rarr;
                     </a>

@@ -60,14 +60,14 @@ export const GithubSection: React.FC = () => {
   ];
 
   return (
-    <section id="github" className="py-20 sm:py-24 border-t border-white/[0.06] relative scroll-mt-20 sm:scroll-mt-24">
+    <section id="github" className="py-14 sm:py-20 lg:py-24 border-t border-white/[0.06] relative scroll-mt-20 sm:scroll-mt-24 overflow-hidden">
       {/* Ambient background lighting */}
       <div
-        className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-emerald-500/[0.03] rounded-full blur-[140px] pointer-events-none"
+        className="absolute top-1/3 left-1/4 w-[400px] max-w-full h-[400px] bg-emerald-500/[0.03] rounded-full blur-[140px] pointer-events-none"
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-1/3 right-1/4 w-[350px] h-[350px] bg-cyan-500/[0.025] rounded-full blur-[130px] pointer-events-none"
+        className="absolute bottom-1/3 right-1/4 w-[350px] max-w-full h-[350px] bg-cyan-500/[0.025] rounded-full blur-[130px] pointer-events-none"
         aria-hidden="true"
       />
 
@@ -84,30 +84,30 @@ export const GithubSection: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-40px' }}
-          className="mt-10"
+          className="mt-8 sm:mt-10"
         >
           {/* Main GitHub Showcase Card */}
           <GlassCard
             variant="default"
             hoverGlow
-            className="p-6 sm:p-8 lg:p-10 border-white/[0.09] bg-[#0c0f17]/90 rounded-2xl relative overflow-hidden"
+            className="p-4 sm:p-7 lg:p-10 border-white/[0.09] bg-[#0c0f17]/90 rounded-2xl relative overflow-hidden"
           >
             {/* Top Identity Banner */}
-            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-8 border-b border-white/[0.07]">
-              <div className="flex items-center gap-4 sm:gap-5">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5 sm:gap-6 pb-6 sm:pb-8 border-b border-white/[0.07]">
+              <div className="flex items-center gap-3.5 sm:gap-5 min-w-0">
                 {/* GitHub Mark Container */}
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#141824] border border-white/[0.1] flex items-center justify-center shadow-inner shrink-0 group">
-                  <Github className="w-7 h-7 sm:w-8 sm:h-8 text-neutral-100 group-hover:scale-110 transition-transform duration-300" />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-[#141824] border border-white/[0.1] flex items-center justify-center shadow-inner shrink-0 group">
+                  <Github className="w-6 h-6 sm:w-8 sm:h-8 text-neutral-100 group-hover:scale-110 transition-transform duration-300" />
                 </div>
 
-                <div>
+                <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2 mb-1 flex-wrap">
-                    <span className="text-base sm:text-xl font-bold text-neutral-100 tracking-tight">
+                    <span className="text-base sm:text-xl font-bold text-neutral-100 tracking-tight truncate">
                       {developerProfile.name}
                     </span>
-                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">
+                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 shrink-0">
                       <Sparkles className="w-2.5 h-2.5" />
-                      Active Public Repositories
+                      Active Repositories
                     </span>
                   </div>
 
@@ -115,10 +115,10 @@ export const GithubSection: React.FC = () => {
                     href={githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono text-neutral-400 hover:text-emerald-300 transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono text-neutral-400 hover:text-emerald-300 transition-colors truncate max-w-full"
                   >
                     <span>@{githubUsername}</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 opacity-70" />
+                    <ArrowUpRight className="w-3.5 h-3.5 opacity-70 shrink-0" />
                   </a>
                 </div>
               </div>

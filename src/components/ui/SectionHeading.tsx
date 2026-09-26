@@ -24,13 +24,13 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
   return (
     <div
       className={cn(
-        'mb-12 sm:mb-16',
+        'mb-8 sm:mb-12 lg:mb-16',
         isCenter ? 'text-center mx-auto max-w-2xl' : 'max-w-2xl',
         className
       )}
     >
       {(badge || stepNumber) && (
-        <div className={cn('flex items-center gap-2 mb-3', isCenter ? 'justify-center' : 'justify-start')}>
+        <div className={cn('flex items-center gap-2 mb-2.5 sm:mb-3', isCenter ? 'justify-center' : 'justify-start')}>
           {stepNumber && (
             <span className="font-mono text-xs font-semibold text-emerald-400 tracking-wider">
               {stepNumber}
@@ -45,12 +45,12 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
         </div>
       )}
 
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-neutral-100">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-neutral-100 text-balance break-words">
         {title}
       </h2>
 
       {subtitle && (
-        <p className="mt-3 text-base sm:text-lg text-neutral-400 leading-relaxed font-normal">
+        <p className="mt-2.5 sm:mt-3 text-sm sm:text-base lg:text-lg text-neutral-400 leading-relaxed font-normal text-pretty">
           {subtitle}
         </p>
       )}
