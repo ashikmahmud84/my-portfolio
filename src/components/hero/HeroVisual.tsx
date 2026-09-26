@@ -67,47 +67,47 @@ export const HeroVisual: React.FC = () => {
         className="relative z-10 p-0 overflow-hidden border-white/[0.1] bg-[#0c0f17]/95 shadow-2xl rounded-2xl"
       >
         {/* Card Titlebar with View Switcher Tabs */}
-        <div className="flex items-center justify-between px-2.5 sm:px-4 py-2 sm:py-2.5 bg-[#090b11] border-b border-white/[0.08] select-none gap-2">
+        <div className="flex items-center justify-between px-3.5 sm:px-4 py-2.5 bg-[#090b11] border-b border-white/[0.08] select-none">
           {/* Window control dots */}
-          <div className="flex items-center gap-1.5 shrink-0">
+          <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]/80 inline-block" />
             <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]/80 inline-block" />
             <span className="w-2.5 h-2.5 rounded-full bg-[#27c93f]/80 inline-block" />
           </div>
 
           {/* Tab Switcher: Photo & Code */}
-          <div className="flex items-center p-0.5 rounded-lg bg-[#121622] border border-white/[0.06] text-[11px] sm:text-xs font-mono">
+          <div className="flex items-center p-0.5 rounded-lg bg-[#121622] border border-white/[0.06] text-xs font-mono">
             <button
               type="button"
               onClick={() => setActiveTab('photo')}
-              className={`flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1 rounded-md transition-all cursor-pointer whitespace-nowrap ${
+              className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md transition-all cursor-pointer ${
                 activeTab === 'photo'
                   ? 'bg-emerald-500/15 text-emerald-300 font-semibold shadow-sm border border-emerald-500/30'
                   : 'text-neutral-400 hover:text-neutral-200'
               }`}
               aria-label="View Profile Photo"
             >
-              <User className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-400 shrink-0" />
+              <User className="w-3.5 h-3.5 text-emerald-400" />
               <span>Developer</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveTab('code')}
-              className={`flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1 rounded-md transition-all cursor-pointer whitespace-nowrap ${
+              className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md transition-all cursor-pointer ${
                 activeTab === 'code'
                   ? 'bg-emerald-500/15 text-emerald-300 font-semibold shadow-sm border border-emerald-500/30'
                   : 'text-neutral-400 hover:text-neutral-200'
               }`}
               aria-label="View Developer Code"
             >
-              <Code2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-cyan-400 shrink-0" />
+              <Code2 className="w-3.5 h-3.5 text-cyan-400" />
               <span>developer.js</span>
             </button>
           </div>
 
           {/* Right Action / Status */}
-          <div className="flex items-center shrink-0">
+          <div className="flex items-center">
             {activeTab === 'code' ? (
               <button
                 type="button"
@@ -164,11 +164,11 @@ export const HeroVisual: React.FC = () => {
               {/* Bottom Gradient Shade & Name Plate Overlay */}
               <div className="absolute inset-x-0 bottom-0 p-3.5 bg-gradient-to-t from-[#080a0f] via-[#080a0f]/80 to-transparent flex flex-col justify-end">
                 <div className="flex items-center justify-between gap-2">
-                  <div className="min-w-0 flex-1">
-                    <h3 className="text-sm sm:text-base font-bold text-neutral-100 tracking-tight leading-tight truncate">
+                  <div>
+                    <h3 className="text-sm sm:text-base font-bold text-neutral-100 tracking-tight leading-tight">
                       {developerProfile.name}
                     </h3>
-                    <p className="text-[11px] sm:text-xs font-mono text-emerald-400 truncate">
+                    <p className="text-[11px] sm:text-xs font-mono text-emerald-400">
                       {developerProfile.subRole || developerProfile.role}
                     </p>
                   </div>
@@ -271,18 +271,17 @@ export const HeroVisual: React.FC = () => {
         )}
 
         {/* Card Footer Status Bar */}
-        <div className="px-3 sm:px-4 py-2 sm:py-2.5 bg-[#090b11] border-t border-white/[0.08] flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-neutral-400 gap-2 min-w-0">
-          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        <div className="px-4 py-2.5 bg-[#090b11] border-t border-white/[0.08] flex items-center justify-between text-[11px] font-mono text-neutral-400">
+          <div className="flex items-center gap-2">
             <Terminal className="w-3 h-3 text-emerald-400" />
-            <span className="text-neutral-300">MERN Stack</span>
+            <span className="text-neutral-300">MERN Full Stack</span>
           </div>
-          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-            <span className="hidden md:inline">JavaScript</span>
-            <span className="hidden md:inline text-white/20">•</span>
-            <span className="text-emerald-400 flex items-center gap-1.5 min-w-0 truncate">
-              <span className="w-1.5 h-1.5 shrink-0 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="truncate">Available</span>
-              <span className="hidden xs:inline truncate">for Work</span>
+          <div className="flex items-center gap-3">
+            <span className="hidden sm:inline">JavaScript</span>
+            <span className="hidden sm:inline text-white/20">•</span>
+            <span className="text-emerald-400 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              Available for Opportunities
             </span>
           </div>
         </div>

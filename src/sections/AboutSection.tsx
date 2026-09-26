@@ -234,7 +234,7 @@ export const AboutSection: React.FC = () => {
                       <span>Diploma in Engineering</span>
                     </h4>
                     <span className="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                      7th Semester
+                      8th Semester
                     </span>
                   </div>
                   <p className="text-xs sm:text-sm font-medium text-emerald-300">
@@ -245,10 +245,10 @@ export const AboutSection: React.FC = () => {
                   </p>
                   <div className="flex flex-wrap items-center gap-1.5 pt-1 text-xs font-mono text-neutral-400">
                     <span className="px-2 py-0.5 rounded bg-white/[0.04] border border-white/[0.08]">
-                      Current: 7th Semester
+                      Current: 8th Semester
                     </span>
                     <span className="px-2 py-0.5 rounded bg-white/[0.04] border border-white/[0.08] text-neutral-300">
-                      Graduation: 2027
+                      Graduation: 2026
                     </span>
                   </div>
                 </div>
