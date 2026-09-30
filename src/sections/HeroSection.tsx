@@ -173,15 +173,17 @@ export const HeroSection: React.FC = () => {
               variants={itemVariants}
               className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto mb-6 sm:mb-7"
             >
-              {/* Primary CTA: View My Projects */}
+              {/* Primary CTA: View Resume */}
               <Button
-                href="#projects"
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 variant="primary"
                 size="md"
                 className="w-full sm:w-auto justify-center"
                 rightIcon={<ArrowRight className="w-4 h-4" aria-hidden="true" />}
               >
-                View My Projects
+                View Resume
               </Button>
 
               {/* Secondary CTA: Contact Me */}
